@@ -219,6 +219,7 @@ footer {
 .portfolio_overzicht h1 {
   font-size: 3rem;
   color: var(--primary-color);
+  text-align: center;
 }
 
 .intro-portfolio {
