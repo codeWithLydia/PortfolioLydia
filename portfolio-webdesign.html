@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Front-end development portfolio van Lydia Lieven"
+    />
+    <title>Portfolio webdesign</title>
+    <link href="styles/style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <header>
+      <nav class="navbar">
+        <button
+          class="toggle-button"
+          aria-expanded="false"
+          aria-controls="navbar-links"
+        >
+          <span class="hamburger-icon">&#9776;</span>
+          <span class="sr-only">Menu openen/sluiten</span>
+        </button>
+        <div class="navbar-links" id="navbar-links">
+          <ul>
+            <li>
+              <a href="/index.html"> Thuis </a>
+            </li>
+            <li>
+              <a href="portfolio-foto.html"> Fotografie </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="portfolio_overzicht">
+        <article class="intro-portfolio">
+          <h1>Webdesign</h1>
+          <p>
+            Op deze pagina vind je de projecten die ik tot nu toe gedaan heb.
+            Het zijn er nu nog niet veel, maar dat worden er wel steeds meer.
+            Klik op het project om naar de pagina met projectdetails te gaan.
+          </p>
+        </article>
+        <article class="project-card">
+          <a href="/project2.html">
+            <img
+              src="/images/portfolio-proces-1.jpeg"
+              id="project_card_img2"
+              class="project-card-img"
+              alt="Screenshot van de code van het portfolio project."
+            />
+            <div class="project-card-text">
+              <h2>Portfolio project</h2>
+              <p>
+                Een portfoliopagina vormgeven en bouwen die laat zien wat ik tot
+                nu toe geleerd heb.
+              </p>
+            </div>
+          </a>
+        </article>
+        <article class="project-card">
+          <a href="/project1.html">
+            <img
+              src="/images/resultaat-react.jpeg"
+              id="project_card_img1"
+              class="project-card-img"
+              alt="Screenshot van de homepagina van het React project"
+            />
+            <div class="project-card-text">
+              <h2>React project</h2>
+              <p>
+                Dit project is de laatste opdracht van m'n opleiding tot
+                front-end developer.
+              </p>
+            </div>
+          </a>
+        </article>
+      </section>
+    </main>
+
+    <footer>
+      <p class="footer-text">
+        Lydia Lieven, © 2024. Alle rechten voorbehouden.
+      </p>
+      <p class="footer-text">
+        Mijn
+        <a href="https://www.linkedin.com/in/lydialieven" target="_blank"
+          >LinkedIn</a
+        >
+      </p>
+    </footer>
+    <script src="scripts/script.js"></script>
+  </body>
+</html>

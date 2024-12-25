@@ -1,0 +1,568 @@
+@import url("https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+
+:root {
+  --font-main: "Atkinson Hyperlegible", Arial, Helvetica, sans-serif;
+  --font-heading: "Roboto Serif", Georgia, "Times New Roman", serif;
+  --primary-color: #084f5d;
+  --secondary-color: #f2e5bf;
+  --acent-color: #ffd6f5;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  line-height: 1.3;
+  box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--primary-color);
+}
+
+p {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  color: var(--primary-color);
+}
+
+figcaption {
+  font-family: var(--font-main);
+  font-size: 0.75rem;
+  color: var(--primary-color);
+}
+
+a {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+a:hover {
+  color: var(--primary-color);
+  background-color: pink;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* styling voor de algemene onderdelen die op iedere pagina terugkomt */
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  background-color: grey;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: var(--primary-color);
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100vw;
+}
+
+/* Navigatie styling */
+
+.navbar {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 1rem;
+}
+
+/* Standaard is het menu verborgen op kleine schermen */
+.navbar-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  z-index: 100;
+}
+
+/* styling voor navigatielijst */
+.navbar-links ul {
+  list-style: none;
+  flex-direction: column;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.navbar-links ul li {
+  margin: 0.25rem 0;
+  background-color: var(--primary-color);
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.25rem;
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.navbar-links ul li a {
+  color: var(--secondary-color);
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+.navbar-links ul li a:hover {
+  color: var(--primary-color);
+}
+
+/* Toon toggle-button op kleine schermen */
+.toggle-button {
+  display: block;
+  font-size: 4rem;
+  background: none;
+  border: none;
+  color: beige;
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  right: 1rem;
+}
+
+/* Screen reader-only styling */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Menu tonen wanneer de .active klasse aanwezig is */
+.navbar-links.active {
+  display: block;
+}
+
+/* Styling voor algemene onderdelen die op iedere pagina terugkomen */
+main {
+  width: 100vw;
+  background-color: var(--secondary-color);
+}
+
+footer {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+  height: 50px;
+  background-color: #084f5d;
+}
+
+.footer-text {
+  color: var(--secondary-color);
+}
+
+.footer-text a {
+  color: var(--secondary-color);
+  text-decoration: none;
+}
+
+.footer-text a:hover {
+  color: var(--primary-color);
+  background-color: pink;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+}
+
+/* styling voor index.html mobile*/
+
+.introductie {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 1.5rem;
+}
+
+.logo-home {
+  width: 25%;
+  height: auto;
+  margin: 1rem;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.introductie p {
+  margin-top: 1rem;
+}
+
+/* styling portfolio webdesign mobile */
+
+.portfolio_overzicht {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 4rem;
+  margin-bottom: 3rem;
+}
+
+.portfolio_overzicht h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.intro-portfolio {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  margin: 1rem;
+  padding: 1rem;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  height: auto;
+  background-color: var(--primary-color);
+  border-radius: 1rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px black;
+}
+
+.project-card-img {
+  max-width: 75%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px black;
+  margin-bottom: 10px;
+}
+
+.project-card-text {
+  color: var(--secondary-color);
+}
+
+.project-card-text h2 {
+  font-size: 2rem;
+  color: var(--secondary-color);
+}
+
+.project-card-text p {
+  color: var(--secondary-color);
+}
+
+.project-card a {
+  text-decoration: none;
+}
+
+.project-card a:hover {
+  background-color: transparent;
+}
+
+/* stijl voor project.html mobile */
+
+.project {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 5rem;
+}
+
+.project h1 {
+  font-size: 3rem;
+}
+
+.project-doel {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.project-doel h2 {
+  font-size: 2rem;
+}
+
+.project-proces {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.project-proces h2 {
+  font-size: 2rem;
+}
+
+.project-resultaat {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: left;
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.project-resultaat h2 {
+  font-size: 2rem;
+}
+
+.skills {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.skills h2 {
+  font-size: 2rem;
+}
+
+.skills ul li {
+  font-family: var(--font-main);
+  list-style-type: none;
+  color: var(--primary-color);
+}
+
+.project-afbeelding {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0.5rem auto;
+}
+
+.project-afbeelding img {
+  max-width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px black;
+  margin-bottom: 10px;
+}
+
+.afbeeldingen-divider {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.afbeeldingen-divider img {
+  width: 40%;
+  height: auto;
+}
+
+/* stijl voor portfolio-foto mobile */
+
+.foto-portfolio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 1rem;
+  margin-top: 3rem;
+  margin-bottom: 0.5rem;
+}
+
+.foto-portfolio h1 {
+  font-size: 3rem;
+  color: var(--primary-color);
+}
+
+.fotografie-afbeelding {
+  width: 75%;
+  height: auto;
+  margin: 1rem;
+}
+.fotografie-afbeelding img {
+  width: 100%;
+  height: auto;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px black;
+}
+
+/* Stijl voor voor grotere schermen */
+@media (min-width: 768px) {
+  header {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 1rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100vw;
+    height: 75px;
+  }
+
+  /* styling voor navigatie*/
+  /* Verberg toggle-button */
+  .toggle-button {
+    display: none;
+  }
+
+  /* Toon de links als button */
+  .navbar-links {
+    display: flex;
+    width: auto;
+    position: static;
+  }
+
+  .navbar-links ul {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar-links ul li {
+    margin-left: 1.5rem;
+    margin-right: 0;
+    border-radius: 0.5rem;
+    border: 2px solid var(--secondary-color);
+  }
+
+  /* styling voor index.html */
+
+  .introductie {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 2rem;
+    padding: 1rem;
+  }
+
+  .logo-home {
+    width: 25%;
+    height: auto;
+    margin: 1rem;
+    border-radius: 1rem;
+    box-shadow: 5px 5px 5px grey;
+  }
+
+  .intro-text {
+    width: 50%;
+    height: auto;
+    margin: 1rem;
+  }
+
+  /* styling voor portfolio-webdesign */
+
+  .portfolio_overzicht {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 4rem;
+    margin-bottom: 3rem;
+  }
+
+  .portfolio_overzicht h1 {
+    font-size: 4.5rem;
+    color: var(--primary-color);
+  }
+
+  .intro-portfolio {
+    width: 50%;
+  }
+
+  .project-card {
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    height: auto;
+  }
+
+  .project-card-img {
+    max-width: 50%;
+    height: auto;
+  }
+
+  /* styling voor project.html */
+
+  .project h1 {
+    font-size: 4.5rem;
+    color: var(--primary-color);
+  }
+
+  .project p {
+    width: 50%;
+    text-align: center;
+  }
+
+  .project-afbeelding {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 0.5rem auto;
+  }
+
+  .project-afbeelding img {
+    max-width: 40%;
+    height: auto;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px black;
+    margin-bottom: 10px;
+  }
+
+  .afbeeldingen-divider {
+    width: 100vw;
+    height: auto;
+  }
+
+  .afbeeldingen-divider img {
+    width: 100px;
+    height: 100px;
+  }
+
+  /* styling voor portfolio fotografie*/
+
+  .foto-portfolio h1 {
+    font-size: 4.5rem;
+    color: var(--primary-color);
+    margin-top: 3rem;
+  }
+
+  .foto-portfolio p {
+    width: 50%;
+  }
+
+  .fotografie-afbeelding {
+    width: 40%;
+    height: auto;
+    margin: 1rem;
+  }
+}
