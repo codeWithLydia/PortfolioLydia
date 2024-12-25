@@ -219,7 +219,6 @@ footer {
 .portfolio_overzicht h1 {
   font-size: 3rem;
   color: var(--primary-color);
-  text-align: center;
 }
 
 .intro-portfolio {
@@ -229,6 +228,7 @@ footer {
   height: auto;
   margin: 1rem;
   padding: 1rem;
+  text-align: center;
 }
 
 .project-card {
