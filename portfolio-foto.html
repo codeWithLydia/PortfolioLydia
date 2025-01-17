@@ -9,20 +9,27 @@
 
   <body>
     <header>
-      <nav class="navbar">
+      <!--skiplink-->
+      <a class="skip-link" href="#main-content">Naar inhoud</a>
+      <!--einde skiplink-->
+      <a href="index.html">
+        <img
+          class="logo-home"
+          src="./images/LogoFigma.svg"
+          alt="Home of Portfolio Lydia Lieven"
+        />
+      </a>
+      <nav class="navbar" aria-label="hoofdmenu">
         <button
           class="toggle-button"
           aria-expanded="false"
           aria-controls="navbar-links"
         >
-          <span class="hamburger-icon">&#9776;</span>
+          <span class="hamburger-icon">menu</span>
           <span class="sr-only">Menu openen/sluiten</span>
         </button>
         <div class="navbar-links" id="navbar-links">
           <ul>
-            <li>
-              <a href="index.html"> Thuis </a>
-            </li>
             <li>
               <a href="portfolio-webdesign.html"> Webdesign </a>
             </li>
@@ -31,8 +38,8 @@
       </nav>
     </header>
 
-    <main>
-      <section class="foto-portfolio">
+    <main id="main-content">
+      <article class="foto-portfolio">
         <h1>Fotografie</h1>
         <p>
           Leuk dat je ook nog even een kijkje neemt op deze pagina! Ik
@@ -59,7 +66,7 @@
           foto's te plaatsen. Dus kom af en toe nog even terug om te kijken of
           er nieuw materiaal op de site staat.
         </p>
-      </section>
+      </article>
     </main>
 
     <footer>
@@ -68,9 +75,8 @@
       </p>
       <p class="footer-text">
         Mijn
-        <a href="https://www.linkedin.com/in/lydialieven" target="_blank"
-          >LinkedIn</a
-        >
+        <a href="https://www.linkedin.com/in/lydialieven">LinkedIn</a>
+        pagina
       </p>
     </footer>
     <script src="scripts/script.js"></script>

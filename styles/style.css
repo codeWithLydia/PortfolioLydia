@@ -4,8 +4,9 @@
   --font-main: "Atkinson Hyperlegible", Arial, Helvetica, sans-serif;
   --font-heading: "Roboto Serif", Georgia, "Times New Roman", serif;
   --primary-color: #084f5d;
-  --secondary-color: #f2e5bf;
+  --secondary-color: #fdfaf1;
   --acent-color: #ffd6f5;
+  --hover-color: #00ffff;
 }
 
 * {
@@ -43,35 +44,82 @@ a {
   cursor: pointer;
 }
 
-a:hover {
-  color: var(--primary-color);
-  background-color: pink;
+a:focus {
+  outline: 2px solid #a7fa00;
   padding: 0.5rem;
-  border-radius: 0.5rem;
 }
 
-/* styling voor de algemene onderdelen die op iedere pagina terugkomt */
+/* styling voor de algemene onderdelen die op iedere pagina terugkomen */
 
 body {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
   min-height: 100vh;
-  background-color: grey;
+  width: 100%;
+  background-color: var(--secondary-color);
+  overflow-x: hidden;
 }
 
 header {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
-  background-color: var(--primary-color);
+  width: 100%;
+  height: auto;
   padding: 1rem;
-  position: fixed;
+  position: sticky;
   top: 0;
   left: 0;
-  z-index: 10;
-  width: 100vw;
+  background-color: var(--primary-color);
+}
+
+.skip-link {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  padding: 1rem;
+  text-decoration: underline;
+  font-size: 1.5rem;
+  font-family: var(--font-main);
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 20px;
+  left: 15px;
+  border: 3px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  outline: 3px solid #a7fa00;
+  z-index: 1000;
+}
+
+.logo-home {
+  width: 10rem;
+  height: auto;
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 2px grey;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 4rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+}
+
+.footer-text {
+  color: var(--secondary-color);
+}
+
+footer a {
+  font-family: var(--font-main);
+  font-size: 1rem;
+  color: var(--secondary-color);
 }
 
 /* Navigatie styling */
@@ -97,16 +145,16 @@ header {
   list-style: none;
   flex-direction: column;
   text-align: center;
-  padding: 0;
+  padding: 0 0.5rem;
   margin: 0;
 }
 
 .navbar-links ul li {
-  margin: 0.25rem 0;
+  margin: 0.25rem;
   background-color: var(--primary-color);
   border: 1px solid var(--secondary-color);
   border-radius: 0.25rem;
-  width: 100%;
+  width: 95%;
   padding: 0.5rem;
 }
 
@@ -116,21 +164,21 @@ header {
   font-size: 1rem;
 }
 
-.navbar-links ul li a:hover {
-  color: var(--primary-color);
-}
-
 /* Toon toggle-button op kleine schermen */
 .toggle-button {
   display: block;
-  font-size: 4rem;
+  font-size: 1.5rem;
   background: none;
-  border: none;
-  color: beige;
+  border: 1px solid var(--secondary-color);
+  border-radius: 0.5rem;
+  box-shadow: 2px 2px 2px grey;
+  padding: 0.5rem;
+  margin: 0.5rem;
+  color: var(--secondary-color);
   cursor: pointer;
   z-index: 1;
   position: absolute;
-  right: 1rem;
+  right: 0.5rem;
 }
 
 /* Screen reader-only styling */
@@ -150,37 +198,6 @@ header {
   display: block;
 }
 
-/* Styling voor algemene onderdelen die op iedere pagina terugkomen */
-main {
-  width: 100vw;
-  background-color: var(--secondary-color);
-}
-
-footer {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  width: 100%;
-  height: 50px;
-  background-color: #084f5d;
-}
-
-.footer-text {
-  color: var(--secondary-color);
-}
-
-.footer-text a {
-  color: var(--secondary-color);
-  text-decoration: none;
-}
-
-.footer-text a:hover {
-  color: var(--primary-color);
-  background-color: pink;
-  padding: 0.5rem;
-  border-radius: 0.5rem;
-}
-
 /* styling voor index.html mobile*/
 
 .introductie {
@@ -188,89 +205,115 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  margin: 1.5rem;
-}
-
-.logo-home {
-  width: 25%;
-  height: auto;
   margin: 1rem;
-  border-radius: 1rem;
-  box-shadow: 5px 5px 5px grey;
+  padding: 0.5rem;
+  /*height: 100vh;*/
 }
 
-.introductie p {
-  margin-top: 1rem;
-}
-
-/* styling portfolio webdesign mobile */
-
-.portfolio_overzicht {
+.afbeelding-home {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  margin-top: 4rem;
-  margin-bottom: 3rem;
 }
 
-.portfolio_overzicht h1 {
-  font-size: 3rem;
-  color: var(--primary-color);
+.afbeelding-home img {
+  width: 50%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 5px 5px 5px grey;
+}
+
+.afbeelding-home figcaption {
+  width: 40%;
+  margin-top: 0.5rem;
+}
+
+.intro-text {
+  width: 90%;
+  margin: 1rem 0;
+  text-align: left;
+}
+
+.intro-text h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+/* styling portfolio webdesign mobile */
+
+.portfolio-overzicht {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 0.5rem 0;
+}
+
+.project-lijst {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding-top: 0.5rem;
+  gap: 1rem;
 }
 
 .intro-portfolio {
-  display: flex;
-  flex-direction: column;
-  width: 80%;
-  height: auto;
-  margin: 1rem;
-  padding: 1rem;
+  width: 85%;
+  margin: 0.5rem 0;
   text-align: center;
+}
+
+.intro-portfolio h1 {
+  font-size: 2.5rem;
 }
 
 .project-card {
   display: flex;
   flex-direction: column;
-  width: 80%;
-  height: auto;
+  justify-content: center;
+  align-items: center;
   background-color: var(--primary-color);
+  width: 85%;
+  min-height: 200px;
+  height: auto;
+  padding: 0.5rem;
   border-radius: 1rem;
-  padding: 1rem;
-  margin-bottom: 1rem;
-  box-shadow: 0 4px 6px black;
+  box-shadow: 0 4px 6px grey;
 }
 
-.project-card-img {
-  max-width: 75%;
+.project-card a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+}
+
+.project-card img {
+  width: 50%;
   height: auto;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px black;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 3px 5px grey;
 }
 
 .project-card-text {
-  color: var(--secondary-color);
+  text-align: center;
+  width: 75%;
 }
 
-.project-card-text h2 {
-  font-size: 2rem;
+.project-card h2 {
   color: var(--secondary-color);
+  font-size: 1.5rem;
 }
 
 .project-card-text p {
   color: var(--secondary-color);
-}
-
-.project-card a {
-  text-decoration: none;
-}
-
-.project-card a:hover {
-  background-color: transparent;
 }
 
 /* stijl voor project.html mobile */
@@ -278,93 +321,63 @@ footer {
 .project {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
-  margin: 5rem;
-}
-
-.project h1 {
-  font-size: 3rem;
+  width: 100%;
+  height: 100%;
+  padding: 1rem;
 }
 
 .project-doel {
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-}
-
-.project-doel h2 {
-  font-size: 2rem;
+  padding: 0.5rem;
 }
 
 .project-proces {
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding: 1rem;
-}
-
-.project-proces h2 {
-  font-size: 2rem;
+  padding: 0.5rem;
 }
 
 .project-resultaat {
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: left;
-  margin-top: 2rem;
-  padding: 1rem;
-}
-
-.project-resultaat h2 {
-  font-size: 2rem;
+  padding: 0.5rem;
 }
 
 .skills {
+  width: 90%;
+  height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
+}
+
+.project h1 {
+  font-size: 2.5rem;
+}
+
+.project h2 {
+  font-size: 1.5rem;
+}
+
+.project p {
   text-align: center;
-  margin-top: 2rem;
-}
-
-.skills h2 {
-  font-size: 2rem;
-}
-
-.skills ul li {
-  font-family: var(--font-main);
-  list-style-type: none;
-  color: var(--primary-color);
-}
-
-.project-afbeelding {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 0.5rem auto;
-}
-
-.project-afbeelding img {
-  max-width: 100%;
-  height: auto;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px black;
-  margin-bottom: 10px;
 }
 
 .afbeeldingen-divider {
@@ -372,58 +385,94 @@ footer {
   flex-direction: row;
   justify-content: center;
   align-items: center;
+  padding: 0.5rem;
+  width: 100%;
+  margin: 0.5rem 0;
 }
 
-.afbeeldingen-divider img {
-  width: 40%;
+.project-afbeelding {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5rem 0;
+}
+
+.project-afbeelding img {
+  width: 90%;
   height: auto;
+  border: 2px solid grey;
+  border-radius: 1rem;
+  box-shadow: 0 3px 5px grey;
+  margin: 0.5rem;
+}
+
+.project-afbeelding figcaption {
+  width: 90%;
+  height: auto;
+}
+
+.skills ul {
+  color: var(--primary-color);
+  font-family: var(--font-main);
+  list-style-type: none;
 }
 
 /* stijl voor portfolio-foto mobile */
 
 .foto-portfolio {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  padding: 1rem;
-  margin-top: 3rem;
-  margin-bottom: 0.5rem;
+  padding: 2rem;
 }
 
 .foto-portfolio h1 {
-  font-size: 3rem;
-  color: var(--primary-color);
+  font-size: 2.5rem;
+}
+
+.foto-portfolio p {
+  text-align: center;
 }
 
 .fotografie-afbeelding {
-  width: 75%;
-  height: auto;
-  margin: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0.5rem 0;
 }
+
 .fotografie-afbeelding img {
-  width: 100%;
+  width: 90%;
   height: auto;
-  border: 2px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px black;
+  border: 2px solid grey;
+  border-radius: 1rem;
+  box-shadow: 0 3px 5px grey;
+  margin: 0.5rem;
+}
+
+.fotografie-afbeelding figcaption {
+  width: 90%;
+  height: auto;
 }
 
 /* Stijl voor voor grotere schermen */
 @media (min-width: 768px) {
-  header {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    background-color: var(--primary-color);
-    padding: 1rem;
-    position: fixed;
-    top: 0;
-    left: 0;
-    z-index: 10;
-    width: 100vw;
-    height: 75px;
+  .logo-home {
+    width: 13rem;
+    height: auto;
+  }
+
+  a:hover {
+    color: var(--hover-color);
+    padding: 0.5rem;
+    text-decoration: underline;
+  }
+
+  p {
+    font-size: 1.125rem;
   }
 
   /* styling voor navigatie*/
@@ -449,6 +498,16 @@ footer {
     margin-right: 0;
     border-radius: 0.5rem;
     border: 2px solid var(--secondary-color);
+    box-shadow: 3px 3px 3px grey;
+  }
+
+  .navbar-links ul li a {
+    font-size: 1.125rem;
+  }
+
+  .navbar-links ul li a:hover {
+    color: var(--hover-color);
+    text-decoration: underline;
   }
 
   /* styling voor index.html */
@@ -459,111 +518,109 @@ footer {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 2rem;
-    padding: 1rem;
+    padding: 0 1rem;
   }
 
-  .logo-home {
-    width: 25%;
+  .afbeelding-home img {
+    width: 75%;
     height: auto;
-    margin: 1rem;
-    border-radius: 1rem;
-    box-shadow: 5px 5px 5px grey;
+  }
+
+  .afbeelding-home figcaption {
+    width: 75%;
   }
 
   .intro-text {
-    width: 50%;
-    height: auto;
-    margin: 1rem;
+    margin-left: 1rem;
+  }
+
+  .intro-text h1 {
+    font-size: 2rem;
   }
 
   /* styling voor portfolio-webdesign */
 
-  .portfolio_overzicht {
-    display: flex;
-    flex-direction: column;
+  .portfolio-overzicht {
+    height: 100vh; /* weghalen wanneer er meer projecten bijkomen*/
     justify-content: center;
-    align-items: center;
-    height: 100%;
-    margin-top: 4rem;
-    margin-bottom: 3rem;
+    gap: 2rem;
   }
-
-  .portfolio_overzicht h1 {
-    font-size: 4.5rem;
-    color: var(--primary-color);
-  }
-
-  .intro-portfolio {
-    width: 50%;
+  .project-lijst {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 0.5rem;
   }
 
   .project-card {
-    display: flex;
-    flex-direction: column;
-    width: 40%;
-    height: auto;
+    width: calc(50% - 0.5rem);
+    min-height: 400px;
+    margin: 0;
   }
 
-  .project-card-img {
-    max-width: 50%;
-    height: auto;
+  .intro-portfolio {
+    width: 75%;
+  }
+  .intro-portfolio h1 {
+    font-size: 3.5rem;
   }
 
   /* styling voor project.html */
 
   .project h1 {
-    font-size: 4.5rem;
-    color: var(--primary-color);
+    font-size: 3.5rem;
   }
 
-  .project p {
-    width: 50%;
-    text-align: center;
+  .project h2 {
+    font-size: 2rem;
+  }
+
+  .project-doel {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    gap: 1rem;
+  }
+
+  .project-proces {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    gap: 1rem;
+  }
+
+  .project-resultaat {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 95%;
+    gap: 1rem;
   }
 
   .project-afbeelding {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    width: 45%;
+  }
+
+  .project-text {
     text-align: center;
-    margin: 0.5rem auto;
-  }
-
-  .project-afbeelding img {
-    max-width: 40%;
-    height: auto;
-    border: 2px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px black;
-    margin-bottom: 10px;
-  }
-
-  .afbeeldingen-divider {
-    width: 100vw;
-    height: auto;
-  }
-
-  .afbeeldingen-divider img {
-    width: 100px;
-    height: 100px;
+    width: 40%;
   }
 
   /* styling voor portfolio fotografie*/
 
   .foto-portfolio h1 {
-    font-size: 4.5rem;
-    color: var(--primary-color);
-    margin-top: 3rem;
+    font-size: 4rem;
   }
 
   .foto-portfolio p {
-    width: 50%;
+    width: 75%;
+    margin: 1rem 0;
   }
 
   .fotografie-afbeelding {
-    width: 40%;
-    height: auto;
-    margin: 1rem;
+    width: 50%;
   }
 }

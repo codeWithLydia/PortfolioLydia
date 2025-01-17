@@ -9,20 +9,27 @@
 
   <body>
     <header>
-      <nav class="navbar">
+      <!--skiplink-->
+      <a class="skip-link" href="#main-content">Naar inhoud</a>
+      <!--einde skiplink-->
+      <a href="index.html">
+        <img
+          class="logo-home"
+          src="./images/LogoFigma.svg"
+          alt="Home of Portfolio Lydia Lieven"
+        />
+      </a>
+      <nav class="navbar" aria-label="hoofdmenu">
         <button
           class="toggle-button"
           aria-expanded="false"
           aria-controls="navbar-links"
         >
-          <span class="hamburger-icon">&#9776;</span>
+          <span class="hamburger-icon">menu</span>
           <span class="sr-only">Menu openen/sluiten</span>
         </button>
         <div class="navbar-links" id="navbar-links">
           <ul>
-            <li>
-              <a href="index.html"> Thuis </a>
-            </li>
             <li>
               <a href="portfolio-webdesign.html"> Webdesign </a>
             </li>
@@ -34,32 +41,13 @@
       </nav>
     </header>
 
-    <main>
-      <section class="project">
+    <main id="main-content">
+      <article class="project">
         <h1>Eindproject React</h1>
-        <article class="project-doel">
-          <section class="afbeeldingen-divider">
-            <img
-              src="./images/Created by.png"
-              alt="Logo van Created by Lydia"
-            />
-            <img
-              src="./images/Created by.png"
-              alt="Logo van Created by Lydia"
-            />
-            <img
-              src="./images/Created by.png"
-              alt="Logo van Created by Lydia"
-            />
-            <img
-              src="./images/Created by.png"
-              alt="Logo van Created by Lydia"
-            />
-            <img
-              src="./images/Created by.png"
-              alt="Logo van Created by Lydia"
-            />
-          </section>
+        <section class="afbeeldingen-divider">
+          <img src="./images/divider.svg" alt="" />
+        </section>
+        <section class="project-doel">
           <figure class="project-afbeelding">
             <img
               src="./images/eisen-react.jpg"
@@ -71,32 +59,32 @@
             </figcaption>
           </figure>
 
-          <h2>Doel van het project</h2>
-          <p>
-            Dit project is de laatste opdracht van m'n opleiding tot front-end
-            developer. Het eindresultaat moest voldoen aan bepaalde eisen
-            waarbij het design iets minder belangrijk is. Het gaat om de code en
-            de functionaliteit van de webapp.
-          </p>
-        </article>
-
-        <section class="afbeeldingen-divider">
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
+          <section class="project-text">
+            <h2>Doel van het project</h2>
+            <p>
+              Dit project is de laatste opdracht van m'n opleiding tot front-end
+              developer. Het eindresultaat moest voldoen aan bepaalde eisen
+              waarbij het design iets minder belangrijk was. Het ging
+              voornamelijk om de code en de functionaliteit van de webapp.
+            </p>
+          </section>
         </section>
 
-        <article class="project-proces">
-          <h2>Proces</h2>
-          <p>
-            Om te voldoen aan alle eisen en om niks te vergeten heb ik als
-            eerste een lijst gemaakt met alle onderdelen en eisen. Daarna heb ik
-            een wireframe gemaakt in Figma. Zo had ik een leidraad voor het
-            eindresultaat. De webapp heb ik gebouwd in VS code. Hiervoor heb ik
-            gebruik gemaakt van ReactJS, want dit was 1 van de eisen.
-          </p>
+        <section class="afbeeldingen-divider">
+          <img src="./images/divider.svg" alt="" />
+        </section>
+
+        <section class="project-proces">
+          <section class="project-text">
+            <h2>Proces</h2>
+            <p>
+              Om te voldoen aan alle eisen en om niks te vergeten, heb ik als
+              eerste een lijst gemaakt met alle onderdelen en eisen. Daarna heb
+              ik een wireframe gemaakt in Figma. Zo had ik een leidraad voor het
+              eindresultaat. De webapp heb ik gebouwd in VS code. Hiervoor heb
+              ik gebruik gemaakt van ReactJS, want dit was 1 van de eisen.
+            </p>
+          </section>
           <figure class="project-afbeelding">
             <img
               src="./images/wireframe-react.jpeg"
@@ -106,17 +94,13 @@
               De getekende wireframes voor het React project.
             </figcaption>
           </figure>
-        </article>
-
-        <section class="afbeeldingen-divider">
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
         </section>
 
-        <article class="project-resultaat">
+        <section class="afbeeldingen-divider">
+          <img src="./images/divider.svg" alt="" />
+        </section>
+
+        <section class="project-resultaat">
           <figure class="project-afbeelding">
             <img
               src="./images/resultaat-react.jpeg"
@@ -126,22 +110,23 @@
               Het uiteindelijke resultaat van de Homepage van het React project.
             </figcaption>
           </figure>
-          <h2>Resultaat</h2>
-          <p>Een webapp die aan alle eisen voldoet en responsive is.</p>
-        </article>
-
-        <section class="afbeeldingen-divider">
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
-          <img src="./images/Created by.png" alt="Logo van Created by Lydia" />
+          <section class="project-text">
+            <h2>Resultaat</h2>
+            <p>
+              Een webapp die aan alle eisen voldoet, die responsive is en die
+              overzichtelijk is voor de gebruiker.
+            </p>
+          </section>
         </section>
 
-        <article class="skills">
+        <section class="afbeeldingen-divider">
+          <img src="./images/divider.svg" alt="" />
+        </section>
+
+        <section class="skills">
           <h2>Skills</h2>
           <ul>
-            <li>webdesign</li>
+            <li>Webdesign</li>
             <li>Figma</li>
             <li>Html</li>
             <li>CSS</li>
@@ -149,8 +134,8 @@
             <li>React</li>
             <li>React Router</li>
           </ul>
-        </article>
-      </section>
+        </section>
+      </article>
     </main>
 
     <footer>
@@ -159,9 +144,8 @@
       </p>
       <p class="footer-text">
         Mijn
-        <a href="https://www.linkedin.com/in/lydialieven" target="_blank"
-          >LinkedIn</a
-        >
+        <a href="https://www.linkedin.com/in/lydialieven">LinkedIn</a>
+        pagina
       </p>
     </footer>
     <script src="scripts/script.js"></script>

@@ -13,20 +13,27 @@
 
   <body>
     <header>
-      <nav class="navbar">
+      <!--skiplink-->
+      <a class="skip-link" href="#main-content">Naar inhoud</a>
+      <!--einde skiplink-->
+      <a href="index.html">
+        <img
+          class="logo-home"
+          src="./images/LogoFigma.svg"
+          alt="Home of Portfolio Lydia Lieven"
+        />
+      </a>
+      <nav class="navbar" aria-label="hoofdmenu">
         <button
           class="toggle-button"
           aria-expanded="false"
           aria-controls="navbar-links"
         >
-          <span class="hamburger-icon">&#9776;</span>
+          <span class="hamburger-icon">menu</span>
           <span class="sr-only">Menu openen/sluiten</span>
         </button>
         <div class="navbar-links" id="navbar-links">
           <ul>
-            <li>
-              <a href="index.html"> Thuis </a>
-            </li>
             <li>
               <a href="portfolio-foto.html"> Fotografie </a>
             </li>
@@ -35,50 +42,53 @@
       </nav>
     </header>
 
-    <main>
-      <section class="portfolio_overzicht">
+    <main id="main-content">
+      <section class="portfolio-overzicht">
         <article class="intro-portfolio">
           <h1>Webdesign</h1>
           <p>
-            Op deze pagina vind je de projecten die ik tot nu toe gedaan heb.
-            Het zijn er nu nog niet veel, maar dat worden er wel steeds meer.
-            Klik op het project om naar de pagina met projectdetails te gaan.
+            Op deze pagina vind je een overzicht van de projecten die ik tot nu
+            toe gedaan heb. Wil je meer weten over het project; wanneer je op
+            het project klikt/tikt ga je naar de pagina met details over dat
+            project.
           </p>
         </article>
-        <article class="project-card">
-          <a href="project2.html">
-            <img
-              src="./images/portfolio-proces-1.jpeg"
-              id="project_card_img2"
-              class="project-card-img"
-              alt="Screenshot van de code van het portfolio project."
-            />
-            <div class="project-card-text">
-              <h2>Portfolio project</h2>
-              <p>
-                Een portfoliopagina vormgeven en bouwen die laat zien wat ik tot
-                nu toe geleerd heb.
-              </p>
-            </div>
-          </a>
-        </article>
-        <article class="project-card">
-          <a href="project1.html">
-            <img
-              src="./images/resultaat-react.jpeg"
-              id="project_card_img1"
-              class="project-card-img"
-              alt="Screenshot van de homepagina van het React project"
-            />
-            <div class="project-card-text">
-              <h2>React project</h2>
-              <p>
-                Dit project is de laatste opdracht van m'n opleiding tot
-                front-end developer.
-              </p>
-            </div>
-          </a>
-        </article>
+        <section class="project-lijst">
+          <article class="project-card">
+            <a href="project2.html">
+              <img
+                src="./images/portfolio-proces-1.jpeg"
+                id="project_card_img2"
+                class="project-card-img"
+                alt="Screenshot van de code van het portfolio project."
+              />
+              <div class="project-card-text">
+                <h2>Portfolio project</h2>
+                <p>
+                  Een portfoliopagina vormgeven en bouwen die laat zien wie ik
+                  ben en wat ik tot nu toe geleerd heb.
+                </p>
+              </div>
+            </a>
+          </article>
+          <article class="project-card">
+            <a href="project1.html">
+              <img
+                src="./images/resultaat-react.jpeg"
+                id="project_card_img1"
+                class="project-card-img"
+                alt="Screenshot van de homepagina van het React project"
+              />
+              <div class="project-card-text">
+                <h2>React project</h2>
+                <p>
+                  Dit project is de laatste opdracht die ik gemaakt heb tijdens
+                  m'n opleiding front-end development.
+                </p>
+              </div>
+            </a>
+          </article>
+        </section>
       </section>
     </main>
 
@@ -88,9 +98,8 @@
       </p>
       <p class="footer-text">
         Mijn
-        <a href="https://www.linkedin.com/in/lydialieven" target="_blank"
-          >LinkedIn</a
-        >
+        <a href="https://www.linkedin.com/in/lydialieven">LinkedIn</a>
+        pagina
       </p>
     </footer>
     <script src="scripts/script.js"></script>
