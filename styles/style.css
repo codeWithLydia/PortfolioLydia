@@ -531,6 +531,7 @@ footer a {
 
   .intro-text {
     margin-left: 1rem;
+    text-align: left;
   }
 
   .intro-text h1 {
